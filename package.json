@@ -1,9 +1,9 @@
 {
   "name": "mcp-time-workdays-node",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "type": "module",
-  "private": true,
   "description": "MCP server (Node) providing current time and workdays with Timor API integration",
+  "main": "mcp_time_workdays_node.mjs",
   "scripts": {
     "start": "node mcp_time_workdays_node.mjs"
   },
@@ -14,9 +14,22 @@
     "@modelcontextprotocol/sdk": "^1.17.5"
   },
   "files": [
-    "mcp_time_workdays_node.mjs"
+    "mcp_time_workdays_node.mjs",
+    "README.md"
   ],
   "engines": {
     "node": ">=18.17"
+  },
+  "keywords": [
+    "mcp",
+    "time",
+    "workdays",
+    "model-context-protocol"
+  ],
+  "author": "tanran",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tanranv5/mcp_time_workdays_node.git"
   }
 }

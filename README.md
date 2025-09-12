@@ -22,17 +22,27 @@
 ## 环境与安装
 - 要求：Node.js >= 18.17
 
-本地安装依赖：
+### 方式一：NPX（推荐）
 ```bash
-npm install
+# 全局安装
+npm install -g mcp-time-workdays-node
+
+# 或直接使用 npx
+npx mcp-time-workdays-node
 ```
 
-运行（MCP 服务器）：
+### 方式二：本地开发
 ```bash
-# 方式一：Node 直接运行
-node mcp_time_workdays_node.mjs
+# 克隆项目
+git clone https://github.com/tanranv5/mcp_time_workdays_node.git
+cd mcp-time-workdays-node
 
-# 方式二：NPM 脚本
+# 安装依赖
+npm install
+
+# 运行服务器
+node mcp_time_workdays_node.mjs
+# 或
 npm start
 ```
 
@@ -71,7 +81,22 @@ node -e "(async()=>{const s=await import('./mcp_time_workdays_node.mjs');})();" 
 > 实际使用中，请让 MCP 兼容的客户端（如 Claude Desktop）通过 stdio 连接。
 
 ## 客户端配置示例（Claude Desktop）
+
+### NPX 方式（推荐）
 在 `claude_desktop_config.json`（或等效位置）中添加：
+```json
+{
+  "mcpServers": {
+    "time-and-workdays-node": {
+      "command": "npx",
+      "args": ["mcp-time-workdays-node"],
+      "env": {}
+    }
+  }
+}
+```
+
+### 本地开发方式
 ```json
 {
   "mcpServers": {
